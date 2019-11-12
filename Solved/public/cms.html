@@ -35,15 +35,15 @@
             </div>
             <br>
             <div class="col-md-5>">
-              <div class="form-group">
-                <button type="submit" id="checkIn" class="btn btn-success submit btn-lg">Check-In</button>
-              </div>
-            </div>
-            <div class="col-md-5>">
-              <button type="button" onclick="document.getElementById('clock-in').innerHTML=Date()" class="btn btn-success submit btn-lg">Check-Out</button>
+              <button type="submit" class="btn btn-success submit btn-lg">Check-Out</button>
             </div>
           </div>
         </form>
+        <br>
+        <br>
+        <button type="button" onclick="document.getElementById('clock-out').innerHTML = Date()">
+            Clock-Out.</button>
+        <p id="clock-out"></p>
       </div>
     </div>
   </div>
