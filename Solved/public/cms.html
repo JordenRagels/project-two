@@ -18,10 +18,16 @@
         <div class="col-sm-2 mt-4">
           <a class="btn btn-light" href="/blog">Go to Logs</a>
         </div>
-      </div>
+      </div>        
+      
       <div class="col-md-5 offset-md-3">
         <form id="cms">
           <div class="form-group">
+            <button type="button" class="btn btn-success submit btn-lg" onclick="document.getElementById('clock-out').innerHTML = Date()">
+            Clock-In</button>
+        <p id="clock-out"></p>
+        <br>
+        <br>
             <label for="title">Description:</label>
             <input type="text" class="form-control" id="title">
             <br />
@@ -41,9 +47,7 @@
         </form>
         <br>
         <br>
-        <button type="button" onclick="document.getElementById('clock-out').innerHTML = Date()">
-            Clock-Out.</button>
-        <p id="clock-out"></p>
+
       </div>
     </div>
   </div>
