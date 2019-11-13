@@ -62,8 +62,9 @@ $(document).ready(function() {
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-default");
+    
     var newPostTitle = $("<h2>");
-    var newPostCheckIn=$("<h3>")
+    var newPostClockIn=$("<h3>")
     var newPostDate = $("<small>");
     var newPostCategory = $("<h5>");
     newPostCategory.text(post.category);
@@ -76,7 +77,7 @@ $(document).ready(function() {
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
     newPostTitle.text(post.title + " ");
-    // newPostClockIn.text(clockIn);
+   newPostClockIn.text(post.clockIn);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     var formattedDate = new Date(post.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     newPostDate.text(formattedDate);
@@ -85,7 +86,8 @@ $(document).ready(function() {
     newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostCategory);
-    newPostCardBody.append(newPostCheckIn);
+
+    newPostCardHeading.append(newPostClockIn);///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
     newPostCard.data("post", post);
