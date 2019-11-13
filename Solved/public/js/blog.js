@@ -6,7 +6,7 @@ $(document).ready(function() {
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
   postCategorySelect.on("change", handleCategoryChange);
-  var posts;
+  var posts; 
 
   // This function grabs posts from the database and updates the view
   function getPosts(category) {
@@ -63,6 +63,7 @@ $(document).ready(function() {
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-default");
     var newPostTitle = $("<h2>");
+    var newPostCheckIn=$("<h3>")
     var newPostDate = $("<small>");
     var newPostCategory = $("<h5>");
     newPostCategory.text(post.category);
@@ -74,9 +75,8 @@ $(document).ready(function() {
     });
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
-    var newPostBody = $("<p>");
     newPostTitle.text(post.title + " ");
-    newPostBody.text(post.body);
+    // newPostClockIn.text(clockIn);
     var formattedDate = new Date(post.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     newPostDate.text(formattedDate);
@@ -85,7 +85,7 @@ $(document).ready(function() {
     newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostCategory);
-    newPostCardBody.append(newPostBody);
+    newPostCardBody.append(newPostCheckIn);
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
     newPostCard.data("post", post);

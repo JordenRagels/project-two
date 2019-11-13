@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Gets an optional query string from our url (i.e. ?post_id=23)
   var url = window.location.search;
   var postId;
@@ -14,6 +14,7 @@ $(document).ready(function() {
 
   // Getting jQuery references to the post body, title, form, and category select
   var titleInput = $("#title");
+  var clockIn = $("#clockIn");
   var cmsForm = $("#cms");
   var postCategorySelect = $("#category");
   // Giving the postCategorySelect a default value
@@ -21,13 +22,11 @@ $(document).ready(function() {
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the post if we are missing a body or a title
-    if (!titleInput.val().trim() ){
-      return;
-    }
+    var clockIn = $("#clockIn");
     // Constructing a newPost object to hand to the database
     var newPost = {
       title: titleInput.val().trim(),
+      clockIn: clockIn.text(),
       category: postCategorySelect.val()
     };
 
@@ -42,27 +41,29 @@ $(document).ready(function() {
     else {
       submitPost(newPost);
     }
-    (console.log("1"))
   });
 
   // Submits a new post and brings user to blog page upon completion
   function submitPost(Post) {
-    $.post("/api/posts/", Post, function() {
-      window.location.href = "/blog";
+    $.post("/api/posts/", Post, function () {
+      window.location.href = "/blog";  
+      (console.log("2"));
     });
-    (console.log("2"));
+  
   }
 
   // Gets post data for a post if we're editing
   function getPostData(id) {
-    $.get("/api/posts/" + id, function(data) {
+    $.get("/api/posts/" + id, function (data) {
       if (data) {
         // If this post exists, prefill our cms forms with its data
         titleInput.val(data.title);
+        clockIn.text(data.clockIn);
         postCategorySelect.val(data.category);
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;
+        (console.log("3"));
       }
     });
   }
@@ -74,7 +75,7 @@ $(document).ready(function() {
       url: "/api/posts",
       data: post
     })
-      .then(function() {
+      .then(function () {
         window.location.href = "/blog";
       });
   }

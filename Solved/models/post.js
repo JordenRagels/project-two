@@ -7,6 +7,10 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    clockIn:{
+      type: DataTypes.TEXT,
+      allowNull:false,
+    },
     category: {
       type: DataTypes.STRING,
       defaultValue: "Wags and Walks"

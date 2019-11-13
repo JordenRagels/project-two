@@ -49,6 +49,7 @@ module.exports = function(app) {
     console.log(req.body);
     db.Post.create({
       title: req.body.title,
+      clockIn:req.body.clockIn,
       category: req.body.category
     })
       .then(function(dbPost) {
