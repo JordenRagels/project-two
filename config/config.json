@@ -3,12 +3,13 @@
     "username": "root",
     "password": "root",
     "database": "test",
+    "database": "users_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
