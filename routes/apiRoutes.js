@@ -21,4 +21,21 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  app.post("/api/user/login", function(req, res) {
+    // db.Example.create(req.body).then(function(dbExample) {
+    //   res.json(dbExample);
+    // });
+console.log(req.body)
+res.end();
+
+
+
+
+
+  });
+
+
+
+
 };
