@@ -1,22 +1,22 @@
 module.exports = function(sequelize, DataTypes) {
   var Organization = sequelize.define("Organization", {
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     username: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     password: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     org: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     volunteers: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     hours: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     }
   });
   return Organization;

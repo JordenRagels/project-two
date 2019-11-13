@@ -1,25 +1,25 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     username: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     password: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     email: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     phone: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.BIGINT
     },
-    start_time: {
-      type: DataTypes.DATE,
+    startTime: {
+      type: DataTypes.DATE
     },
-    end_time: {
-      type: DataTypes.DATE,
+    endTime: {
+      type: DataTypes.DATE
     }
   });
   return User;
