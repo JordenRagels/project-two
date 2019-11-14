@@ -1,0 +1,120 @@
+<nav class="navbar navbar-light blue lighten-4">
+    <span class="navbar-brand">Voluntour</span>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+                <div class="card-img-left d-none d-md-flex">
+                    <!-- Background image for card set in CSS! -->
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Contact Info</h5>
+                    <form class="form-signin" action="/api/create" method="POST">
+                        <div class="form-row">
+                            <!-- Grid column -->
+                            <div class="col">
+                                <!-- Material input -->
+                                <div class="md-form mt-0">
+                                    <input type="text" name="firstName" class="form-control" placeholder="First name">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col">
+                                <!-- Material input -->
+                                <div class="md-form mt-0">
+                                    <input type="text" name="lastName" class="form-control" placeholder="Last name">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+
+
+
+                        <!-- Grid row -->
+                        <div class="form-row">
+                            <!-- Grid column -->
+                            <div class="col">
+                                <!-- Material input -->
+                                <div class="md-form mt-0">
+                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="form-row">
+                            <!-- Grid column -->
+                            <div class="col">
+                                <!-- Material input -->
+                                <div class="md-form mt-0">
+                                    <input type="tel" name="phone" class="form-control" placeholder="Phone number">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+
+                        <h5 class="card-title text-center">Sign In Info</h5>
+                        <hr>
+
+                        <!-- Grid row -->
+                        <div class="form-row">
+                            <!-- Grid column -->
+                            <div class="col">
+                                <!-- Material input -->
+                                <div class="md-form mt-0">
+                                    <input type="text" name="username" class="form-control" placeholder="Username">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="form-row">
+                            <!-- Grid column -->
+                            <div class="col">
+                                <!-- Material input -->
+                                <div class="md-form mt-0">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Grid row -->
+                        <div class="form-row">
+                            <!-- Grid column -->
+                            <div class="col">
+                                <!-- Material input -->
+                                <div class="md-form mt-0">
+                                    <input type="password" name="confirm" class="form-control" placeholder="Confirm password">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+
+                        <!-- Default unchecked -->
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Admin?</label>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Finish</button>
+                        <a class="d-block text-center mt-2 small" href="#">Sign In</a>
+                        <hr class="my-4">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
