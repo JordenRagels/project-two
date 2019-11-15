@@ -1,3 +1,31 @@
+/* Project Two Color Scheme
+
+Primary Blue
+#26a69a
+
+Light Blue
+#64d8cb
+
+Dark Blue
+#00766c
+
+Secondary
+#fff59d
+
+Light
+#ffffcf
+
+Dark 
+#cbc26d 
+
+logo image
+ https://files.slack.com/files-pri/TL9EG7PSL-FQCBN4R45/image_from_ios.jpg */
+
+body {
+  margin: 0 auto;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
+
