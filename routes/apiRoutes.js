@@ -19,7 +19,7 @@ module.exports = function(app) {
   });
 
   // route for adding an administrator
-  app.post("admin/register", function(req, res) {
+  app.post("/admin/register", function(req, res) {
     console.log(req.body);
     db.Organization.create({
       firstName: req.body.firstName,
@@ -34,3 +34,11 @@ module.exports = function(app) {
     });
   });
 };
+
+// capture data from login form and put in database
+// GET route for getting all of the users
+app.get("/api/users/", function(_req, res) {
+  db.User.findAll({}).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
