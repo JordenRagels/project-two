@@ -1,5 +1,6 @@
 $(document).ready(function () {
   // blogContainer holds all of our posts
+  var globalTimeDiff=0;
   var blogContainer = $(".blog-container");
   var postCategorySelect = $("#category");
   // Click events for the edit and delete buttons
@@ -22,6 +23,7 @@ $(document).ready(function () {
       }
       else {
         initializeRows();
+
       }
     });
   }
@@ -42,12 +44,15 @@ $(document).ready(function () {
   // InitializeRows handles appending all of our constructed post HTML inside
   // blogContainer
   function initializeRows() {
+    globalTimeDiff=0;
     blogContainer.empty();
     var postsToAdd = [];
     for (var i = 0; i < posts.length; i++) {
       postsToAdd.push(createNewRow(posts[i]));
     }
     blogContainer.append(postsToAdd);
+    $("#total-hours").text(globalTimeDiff )
+    console.log(globalTimeDiff);
   }
 
 
@@ -64,11 +69,11 @@ $(document).ready(function () {
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-default");
 
-    var newPostTitle = $("<h2>");
-    var newPostClockIn = $("<h3>");
-   
-    var newPostDate = $("<small>");
-    var newPostCategory = $("<h5>");
+    var newPostTitle = $("<h2 id=title>");
+    var newPostClockIn = $("<small id=clockIn>");
+    var newPostDate = $("<small id=clockOut>");
+    var newPostCategory = $("<h5 id=organization>");
+
     newPostCategory.text(post.category);
     newPostCategory.css({
       float: "right",
@@ -79,34 +84,44 @@ $(document).ready(function () {
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
     newPostTitle.text(post.title + " ");
-    newPostClockIn.text(post.clockIn);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    newPostClockIn.text(post.clockIn);
     var formattedDate = new Date(post.createdAt);
-    formattedDate = moment(formattedDate);
+    //formattedDate = moment(formattedDate);
+    newPostClockIn=new Date(post.clockIn)
     newPostDate.text(formattedDate);
       //This function will print out the amount of time that has 
-  var timeDiff =(Math.floor (formattedDate)) - (Math.floor(newPostClockIn)); //in ms
-  // strip the ms
-  timeDiff /= 1000;
-  console.log(timeDiff)
+  var timeDiff =(formattedDate.getTime() - newPostClockIn.getTime()); 
   console.log(newPostClockIn);
-  console.log(formattedDate)
+  console.log(formattedDate);  
   // get seconds 
-  var seconds = Math.round(timeDiff);
-  console.log(seconds + " seconds");
-  ////////////////////////////////////////////////////////////////////////
+  timeDiff /= 1000; 
+  console.log(timeDiff);    
+var seconds=Math.abs(timeDiff);
+console.log(seconds); 
+var newPostTimeDiff=timeDiff
+console.log(newPostTimeDiff)
+ ////////////////////////////////////////////////////////////////////////
+ globalTimeDiff += seconds/3600
+var times=[
+  timeDiff +newPostTimeDiff
+];
+newPostCardHeading.prepend(times);
   newPostCardHeading.append(newPostClockIn);
     newPostCardHeading.append(deleteBtn);
     newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostCategory);
-    newPostTitle.append(newPostDate);///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    newPostTitle.append(newPostDate);
     newPostCard.append(newPostCardHeading);
+    newPostCardHeading.append(newPostTimeDiff + " seconds");
     newPostCard.append(newPostCardBody);
     newPostCard.data("post", post); 
+    return newPostCard;   
+  }  
 
-    return newPostCard;
+console.log(newPostTimeDiff);
+  //this function will calculate the total time
 
-  }
 
   // This function figures out which post we want to delete and then calls
   // deletePost
@@ -133,7 +148,7 @@ $(document).ready(function () {
     blogContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No posts yet for this category, navigate <a href='/cms'>here</a> in order to create a new post.");
+    messageH2.html("No posts yet for this, organization <a href='/cms'>here</a> in order to create a new log.");
     blogContainer.append(messageH2);
   }
 
@@ -141,8 +156,6 @@ $(document).ready(function () {
   function handleCategoryChange() {
     var newPostCategory = $(this).val();
     getPosts(newPostCategory);
-  }
-
+  };
 
 });
-
