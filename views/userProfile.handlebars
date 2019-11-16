@@ -61,14 +61,14 @@
                                     <tbody>
                                         {{!-- need to have table data show info based on what's been entered
                                         from create account page --}}
+                                         {{#each data}}
+
                                         <tr>
-                                            <td>Habitat for Humanity</td>
-                                            <td>3</td>
+                                            <td>{{org}}</td>
+                                            <td>{{hours}}</td>
                                         </tr>
-                                        <tr>
-                                            <td>Food Bank</td>
-                                            <td>7</td>
-                                        </tr>
+                                        
+                                        {{/each}}
                                     </tbody>
                                     {{!-- Table body --}}
                                 </table>
