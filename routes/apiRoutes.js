@@ -1,6 +1,8 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  // want to send info to the home page
+  app.get("/", function(req, res) {});;
   // POST route for saving a new user
   app.post("/user/register", function(req, res) {
     console.log(req.body);
@@ -34,7 +36,6 @@ module.exports = function(app) {
     });
   });
 
-
   app.get("/api/users", function(req, res) {
     db.User.findAll().then(function(dbUser) {
       res.json(dbUser);
@@ -46,8 +47,7 @@ module.exports = function(app) {
       res.json(dbOrganization);
     });
   });
-};
-=======
+
   app.post("/api/user/login", function(req, res) {
     console.log(req.body);
   });
@@ -57,7 +57,3 @@ module.exports = function(app) {
     });
   });
 };
-
-// capture data from login form and put in database
-// GET route for getting all of the users
-
