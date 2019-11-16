@@ -1,0 +1,17 @@
+body {
+  margin: 0 auto;
+}
+
+.list-group-item {
+  line-height: 2.5;
+}
+
+.navbar-brand {
+  font-size: 50px;
+  padding-left: 20px;
+}
+
+nav {
+  background-color: #c48b9f;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+$primaryPink: #f8bbd0;
+$lightPink: #ffeeff;
+$darkPink: #c48b9f;
+$secondaryGrey: #bdbdbd;
+$lightGrey: #efefef;
+$darkGrey: #8d8d8d;
+body {
+    margin: 0 auto;
+}
+
+.list-group-item {
+    line-height: 2.5;
+}
+
+.navbar-brand {
+    font-size: 50px;
+    padding-left: 20px;
+}
+
+nav {
+    background-color: $darkPink;
+}
