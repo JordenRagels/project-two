@@ -24,8 +24,17 @@ module.exports = function(app) {
 
   //create user profile route
   app.get("/user/profile", function(req, res) {
-    res.render("userProfile", {
-      title: "Voluntour - User Profile"
+    db.User.findAll({}).then(function(dbUser) {
+      console.log(req);
+      console.log(dbUser[0]);
+      if (
+        req.body.username === dbUser.username &&
+        req.body.password === dbUser.password
+      ) {
+        res.render("userProfile", {
+          title: "Voluntour - User Profile"
+        });
+      }
     });
   });
 
