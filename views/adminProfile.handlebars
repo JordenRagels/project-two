@@ -32,27 +32,33 @@
                         <br>
                         <div class="row">
                             <div class="col">
-                                <!--Talble that shows Names of volunteers/employees and provides
+                                <div id="firstName">{{data.firstName}}</div>
+                                <div id="lastName"></div>
+                                <div id="username"></div>
+                                <div id="org"></div>
+                                <!--Table that shows Names of volunteers/employees and provides
                                 hours of volunteer time-->
                                 <table id="tablePreview" class="table table-hover table-borderless z-depth-2">
                                     <!--Table head-->
                                     <thead>
                                         <tr>
                                             <th>Volunteers</th>
+
                                             <th>Hours</th>
                                         </tr>
                                     </thead>
                                     <!--Table head-->
                                     <!--Table body-->
                                     <tbody>
+
+                                        {{#each data}}
+
                                         <tr>
-                                            <td>Mark Humphrey</td>
-                                            <td>3</td>
+                                            <td>{{firstName}} {{lastName}}</td>
+                                            <td>{{hours}}</td>
                                         </tr>
-                                        <tr>
-                                            <td>Jacob Yarn</td>
-                                            <td>7</td>
-                                        </tr>
+                                        
+                                        {{/each}}
 
 
                                     </tbody>

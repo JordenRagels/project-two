@@ -1,4 +1,4 @@
-nav class="navbar navbar-light blue lighten-4">
+<nav class="navbar navbar-light blue lighten-4">
                 <span class="navbar-brand">Voluntour</span>
             </nav>
             {{!-- User/Volunteer Profile Page --}}
@@ -52,14 +52,14 @@ nav class="navbar navbar-light blue lighten-4">
                                         <!--Table head-->
                                         <!--Table body-->
                                         <tbody>
-                                            <tr>
-                                                <td>Habitat for Humanity</td>
-                                                <td>3</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Food Bank</td>
-                                                <td>7</td>
-                                            </tr>
+                                             {{#each data}}
+
+                                        <tr>
+                                            <td>{{org}}</td>
+                                            <td>{{hours}}</td>
+                                        </tr>
+                                        
+                                        {{/each}}
 
 
                                         </tbody>

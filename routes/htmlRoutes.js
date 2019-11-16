@@ -32,6 +32,18 @@ module.exports = function(app) {
 
   // create admin profile route
   app.get("/admin/profile", function(req, res) {
+    // var newAdmin = {
+    //   firstName: $("#firstName").val(),
+    //   lastName: $("#lastName").val(),
+    //   username: $("#username").val(),
+    //   org: $("#org").val()
+    // };
+
+    // $.ajax({
+    //   method: "GET",
+    //   url: "<route>",
+    //   data: newAdmin
+    // });
     res.render("adminProfile", {
       title: "Voluntour - Admin Profile"
     });

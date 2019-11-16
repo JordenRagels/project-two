@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // want to send info to the home page
-  app.get("/", function(req, res) {});;
+
   // POST route for saving a new user
   app.post("/user/register", function(req, res) {
     console.log(req.body);
@@ -51,7 +51,26 @@ module.exports = function(app) {
   app.post("/api/user/login", function(req, res) {
     console.log(req.body);
   });
-  app.get("/api/users/", function(_req, res) {
+
+  app.get("/admin/profile", function(req, res) {
+    db.Organization.findAll().then(function(dbOrganization) {
+      // console.log(dbOrganization[0]);
+      res.render("adminProfile", {
+        data: dbOrganization
+      });
+    });
+  });
+
+  app.get("/user/profile", function(req, res) {
+    db.Organization.findAll().then(function(dbOrganization) {
+      // console.log(dbOrganization[0]);
+      res.render("userProfile", {
+        data: dbOrganization
+      });
+    });
+  });
+
+  app.get("/api/users/", function(req, res) {
     db.User.findAll({}).then(function(dbUser) {
       res.json(dbUser);
     });
