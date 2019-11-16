@@ -34,6 +34,7 @@ module.exports = function(app) {
     });
   });
 
+
   app.get("/api/users", function(req, res) {
     db.User.findAll().then(function(dbUser) {
       res.json(dbUser);
@@ -46,3 +47,17 @@ module.exports = function(app) {
     });
   });
 };
+=======
+  app.post("/api/user/login", function(req, res) {
+    console.log(req.body);
+  });
+  app.get("/api/users/", function(_req, res) {
+    db.User.findAll({}).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+};
+
+// capture data from login form and put in database
+// GET route for getting all of the users
+
