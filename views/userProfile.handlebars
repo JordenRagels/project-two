@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light blue lighten-4">
-<span class="navbar-brand">Voluntour</span>
+    <span class="navbar-brand">Voluntour</span>
 </nav>
 {{!-- User/Volunteer Profile Page --}}
 <div class="container">
@@ -13,10 +13,12 @@
                         <div class="row">
                             <div class="col">
                                 {{!-- profile photo  --}}
+                                {{!-- need to add edit, browse, and save for
+                                user to update and change profile pic --}}
                                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg"
                                     alt="thumbnail" class="img-thumbnail z-depth-3 rounded-circle float-left"
                                     style="width: 200px">
-                                    {{!-- profile photo  --}}
+                                {{!-- profile photo  --}}
                             </div>
                             <div class="col">
                                 {{!-- Name and contact info (email & phone number) of volunteer  --}}
@@ -27,6 +29,8 @@
                                         <div class="text-center">
                                             {{!-- need to link button to display contact
                                             info from users create account page --}}
+                                            {{!-- need to code in an edit and save button for 
+                                            users to make changes in contact info --}}
                                             <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
                                                 data-target="#modalContactForm">Contact Info</a>
                                         </div>
@@ -63,11 +67,10 @@
                                         from create account page --}}
                                         <tr>
                                             <td>Habitat for Humanity</td>
-                                            <td>3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Food Bank</td>
-                                            <td>7</td>
+                                            <td>
+                                                <!-- Button trigger modal-->
+                                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#modalChart">Total Hours</button></td>
                                         </tr>
                                     </tbody>
                                     {{!-- Table body --}}
@@ -111,6 +114,56 @@
 
                                 </div>
                             </div>
+
+                            {{!-- Modal showing table data for Total number of hours volunteered --}}
+                            {{!-- (name of org, date, time and total for each org)  --}}
+
+                            {{!-- Modal: modalChart  --}}
+                            <div class="modal fade" id="modalChart" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        {{!-- Header --}}
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel">Total Hours</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        {{!-- Body --}}
+                                        <div class="modal-body">
+
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Organization</th>
+                                                        <th>Date</th>
+                                                        <th>Time</th>
+                                                        <th>Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Habitat for Humanity</td>
+                                                        <td>9/19/19</td>
+                                                        <td>00:00 - 00:00</td>
+                                                        <td>00:00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        {{!-- Footer --}}
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-primary z-depth-2"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{!-- Modal: modalChart  --}}
                         </div>
 
                     </form>
