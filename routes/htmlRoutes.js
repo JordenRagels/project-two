@@ -3,11 +3,36 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    res.render("index", {
+      title: "Voluntour - Home"
+    });
+  });
+
+  //Login in page
+  app.get("/login", function(req, res) {
+    res.render("loginPage", {
+      title: "Voluntour - Login"
+    });
+  });
+
+  // create account route
+  app.get("/create", function(req, res) {
+    res.render("createAcct", {
+      title: "Voluntour - Create Account"
+    });
+  });
+
+  //create user profile route
+  app.get("/user/profile", function(req, res) {
+    res.render("userProfile", {
+      title: "Voluntour - User Profile"
+    });
+  });
+
+  // create admin profile route
+  app.get("/admin/profile", function(req, res) {
+    res.render("adminProfile", {
+      title: "Voluntour - Admin Profile"
     });
   });
 
@@ -20,11 +45,6 @@ module.exports = function(app) {
         example: dbExample
       });
     });
-  });
-
-  //Login in page
-  app.get("/login", function(req, res) {
-    res.render("createLogin");
   });
 
   // Render 404 page for any unmatched routes
