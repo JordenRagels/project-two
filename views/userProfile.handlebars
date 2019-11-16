@@ -65,13 +65,19 @@
                                     <tbody>
                                         {{!-- need to have table data show info based on what's been entered
                                         from create account page --}}
+                                         {{#each data}}
+
                                         <tr>
                                             <td>Habitat for Humanity</td>
                                             <td>
                                                 <!-- Button trigger modal-->
                                                 <button type="button" class="btn btn-primary" data-toggle="modal"
                                                     data-target="#modalChart">Total Hours</button></td>
+                                            <td>{{org}}</td>
+                                            <td>{{hours}}</td>
                                         </tr>
+                                        
+                                        {{/each}}
                                     </tbody>
                                     {{!-- Table body --}}
                                 </table>
