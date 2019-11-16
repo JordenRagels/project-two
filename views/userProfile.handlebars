@@ -13,18 +13,41 @@
                         <div class="row">
                             <div class="col">
                                 {{!-- profile photo  --}}
+<<<<<<< HEAD
                                 <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg"
                                     alt="thumbnail" class="img-thumbnail z-depth-3 rounded-circle float-left"
                                     style="width: 200px">
+=======
+                                {{!-- need to add edit, browse, and save for
+                                user to update and change profile pic --}}
+                                <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg"
+                                    alt="thumbnail" class="img-thumbnail z-depth-3 rounded-circle float-left"
+                                    style="width: 200px">
+                                {{!-- profile photo  --}}
+>>>>>>> 0e64c7be849518642c9fb70c6d6a58db9c41819f
                             </div>
                             <div class="col">
                                 {{!-- Name and contact info (email & phone number) of volunteer  --}}
                                 <div class="card border-info mb-3" style="max-width: 20rem;">
+<<<<<<< HEAD
                                     <div class="card-header">John Doe</div>
                                     <div class="card-body text-info">
                                         <h5 class="card-title">Contact Info</h5>
                                         <p class="card-text">email@email.com</p>
                                         <p class="card-text">(555)555-5555</p>
+=======
+                                    {{!-- need to make name link to show name displayed from create account page --}}
+                                    <div class="card-header">John Doe</div>
+                                    <div class="card-body text-info">
+                                        <div class="text-center">
+                                            {{!-- need to link button to display contact
+                                            info from users create account page --}}
+                                            {{!-- need to code in an edit and save button for 
+                                            users to make changes in contact info --}}
+                                            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
+                                                data-target="#modalContactForm">Contact Info</a>
+                                        </div>
+>>>>>>> 0e64c7be849518642c9fb70c6d6a58db9c41819f
                                     </div>
                                 </div>
                             </div>
@@ -33,6 +56,7 @@
                             <div class="col">
                                 <div class="card">
                                     <div class="card-body text-center">
+<<<<<<< HEAD
 
                                         <ul>
                                             <li>
@@ -80,7 +104,136 @@
                                     <!--Table body-->
                                 </table>
                                 <!--Table-->
+=======
+                                        {{!-- need to have total hours show in stead of 00:00 --}}
+                                        Total Hours: 00:00
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                {{!-- Table shows volunteer organizations and hours worked --}}
+                                <table id="tablePreview" class="table table-hover table-borderless z-depth-2">
+                                    {{!-- Table head --}}
+                                    <thead>
+                                        <tr>
+                                            <th>Volunteer Organizations</th>
+                                            <th>Hours</th>
+                                        </tr>
+                                    </thead>
+                                    {{!-- Table head --}}
+                                    {{!-- Table body --}}
+                                    <tbody>
+                                        {{!-- need to have table data show info based on what's been entered
+                                        from create account page --}}
+                                         {{#each data}}
+
+                                        <tr>
+                                            <td>Habitat for Humanity</td>
+                                            <td>
+                                                <!-- Button trigger modal-->
+                                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#modalChart">Total Hours</button></td>
+                                            <td>{{org}}</td>
+                                            <td>{{hours}}</td>
+                                        </tr>
+                                        
+                                        {{/each}}
+                                    </tbody>
+                                    {{!-- Table body --}}
+                                </table>
+                                {{!-- Table --}}
+
+                                {{!-- Button to add another volunteer organization --}}
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="btn btn-primary" type="button" value="Add Organization">
+                                    </div>
+                                </div>
+                                {{!-- Button to add another volunteer organization --}}
+
+                            </div>
+                            {{!-- Modal shows the Contact Info (email and phone number) for volunteer  --}}
+                            <div class="modal fade z-depth-2" id="modalContactForm" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header text-center">
+                                            <h4 class="modal-title w-100 font-weight-bold">John Doe</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="md-form mb-5">
+                                            <i class="fas fa-envelope prefix grey-text"></i>
+                                            <input type="email" id="form29" class="form-control validate">
+                                            <label data-error="wrong" data-success="right" for="form29">Your
+                                                email</label>
+                                        </div>
+
+                                        <div class="md-form mb-5">
+                                            <i class="fas fa-tag prefix grey-text"></i>
+                                            <input type="tel" id="form32" class="form-control validate">
+                                            <label data-error="wrong" data-success="right" for="form32">Phone
+                                                number</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {{!-- Modal showing table data for Total number of hours volunteered --}}
+                            {{!-- (name of org, date, time and total for each org)  --}}
+
+                            {{!-- Modal: modalChart  --}}
+                            <div class="modal fade" id="modalChart" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        {{!-- Header --}}
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel">Total Hours</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        {{!-- Body --}}
+                                        <div class="modal-body">
+
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Organization</th>
+                                                        <th>Date</th>
+                                                        <th>Time</th>
+                                                        <th>Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Habitat for Humanity</td>
+                                                        <td>9/19/19</td>
+                                                        <td>00:00 - 00:00</td>
+                                                        <td>00:00</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                        {{!-- Footer --}}
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-primary z-depth-2"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+>>>>>>> 0e64c7be849518642c9fb70c6d6a58db9c41819f
+                            </div>
+                            {{!-- Modal: modalChart  --}}
                         </div>
 
                     </form>
@@ -88,4 +241,8 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 0e64c7be849518642c9fb70c6d6a58db9c41819f
