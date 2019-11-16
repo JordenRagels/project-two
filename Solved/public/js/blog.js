@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // blogContainer holds all of our posts
   var blogContainer = $(".blog-container");
   var postCategorySelect = $("#category");
@@ -6,7 +6,7 @@ $(document).ready(function() {
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
   postCategorySelect.on("change", handleCategoryChange);
-  var posts; 
+  var posts;
 
   // This function grabs posts from the database and updates the view
   function getPosts(category) {
@@ -14,7 +14,7 @@ $(document).ready(function() {
     if (categoryString) {
       categoryString = "/category/" + categoryString;
     }
-    $.get("/api/posts" + categoryString, function(data) {
+    $.get("/api/posts" + categoryString, function (data) {
       console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {
@@ -32,7 +32,7 @@ $(document).ready(function() {
       method: "DELETE",
       url: "/api/posts/" + id
     })
-      .then(function() {
+      .then(function () {
         getPosts(postCategorySelect.val());
       });
   }
@@ -50,6 +50,7 @@ $(document).ready(function() {
     blogContainer.append(postsToAdd);
   }
 
+
   // This function constructs a post's HTML
   function createNewRow(post) {
     var newPostCard = $("<div>");
@@ -62,9 +63,10 @@ $(document).ready(function() {
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-default");
-    
+
     var newPostTitle = $("<h2>");
-    var newPostClockIn=$("<h3>")
+    var newPostClockIn = $("<h3>");
+   
     var newPostDate = $("<small>");
     var newPostCategory = $("<h5>");
     newPostCategory.text(post.category);
@@ -72,26 +74,38 @@ $(document).ready(function() {
       float: "right",
       "font-weight": "700",
       "margin-top":
-      "-15px"
+        "-15px"
     });
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
     newPostTitle.text(post.title + " ");
-   newPostClockIn.text(post.clockIn);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    newPostClockIn.text(post.clockIn);//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     var formattedDate = new Date(post.createdAt);
-    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+    formattedDate = moment(formattedDate);
     newPostDate.text(formattedDate);
-    newPostTitle.append(newPostDate);
+      //This function will print out the amount of time that has 
+  var timeDiff =(Math.floor (formattedDate)) - (Math.floor(newPostClockIn)); //in ms
+  // strip the ms
+  timeDiff /= 1000;
+  console.log(timeDiff)
+  console.log(newPostClockIn);
+  console.log(formattedDate)
+  // get seconds 
+  var seconds = Math.round(timeDiff);
+  console.log(seconds + " seconds");
+  ////////////////////////////////////////////////////////////////////////
+  newPostCardHeading.append(newPostClockIn);
     newPostCardHeading.append(deleteBtn);
     newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostCategory);
-
-    newPostCardHeading.append(newPostClockIn);///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    newPostTitle.append(newPostDate);///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
-    newPostCard.data("post", post);
+    newPostCard.data("post", post); 
+
     return newPostCard;
+
   }
 
   // This function figures out which post we want to delete and then calls
@@ -129,4 +143,6 @@ $(document).ready(function() {
     getPosts(newPostCategory);
   }
 
+
 });
+
