@@ -21,11 +21,16 @@ Dark
 logo image
  https://files.slack.com/files-pri/TL9EG7PSL-FQCBN4R45/image_from_ios.jpg */
 
+
 body {
   margin: 0 auto;
 }
 
 .list-group-item {
   line-height: 2.5;
+}
+
+.dropdown {
+  list-style-type: none;
 }
 

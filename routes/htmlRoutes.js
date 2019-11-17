@@ -22,33 +22,6 @@ module.exports = function(app) {
     });
   });
 
-  //create user profile route
-  // and send data to page
-  app.get("/user/profile", function(req, res) {
-    res.render("userProfile", {
-      title: "Voluntour - User Profile"
-    });
-  });
-
-  // create admin profile route
-  app.get("/admin/profile", function(req, res) {
-    // var newAdmin = {
-    //   firstName: $("#firstName").val(),
-    //   lastName: $("#lastName").val(),
-    //   username: $("#username").val(),
-    //   org: $("#org").val()
-    // };
-
-    // $.ajax({
-    //   method: "GET",
-    //   url: "<route>",
-    //   data: newAdmin
-    // });
-    res.render("adminProfile", {
-      title: "Voluntour - Admin Profile"
-    });
-  });
-
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(

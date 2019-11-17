@@ -56,6 +56,7 @@ module.exports = function(app) {
     db.Organization.findAll().then(function(dbOrganization) {
       // console.log(dbOrganization[0]);
       res.render("adminProfile", {
+        title: "Voluntour - Admin Page",
         data: dbOrganization
       });
     });
@@ -65,6 +66,7 @@ module.exports = function(app) {
     db.Organization.findAll().then(function(dbOrganization) {
       // console.log(dbOrganization[0]);
       res.render("userProfile", {
+        title: "Voluntour - User Profile Page",
         data: dbOrganization
       });
     });
