@@ -33,6 +33,22 @@ module.exports = function(app) {
       res.json(dbOrganization);
     });
   });
+
+  app.get("/api/users", function(_req, res) {
+    db.User.findAll().then(function(dbUser) {
+      res.json(dbUser);
+      console.log(dbUser);
+    });
+  });
+
+  app.get("/api/orgs", function(_req, res) {
+    db.Organization.findAll().then(function(dbOrganization) {
+      res.json(dbOrganization);
+    });
+  });
+  app.post("/api/user/login", function(req) {
+    console.log(req.body);
+  });
   app.get("/api/users/", function(_req, res) {
     db.User.findAll({}).then(function(dbUser) {
       res.json(dbUser);
