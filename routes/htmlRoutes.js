@@ -23,6 +23,7 @@ module.exports = function(app) {
   });
 
   //create user profile route
+  // and send data to page
   app.get("/user/profile", function(req, res) {
     db.User.findAll({}).then(function(dbUser) {
       console.log(req);
