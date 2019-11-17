@@ -13,7 +13,7 @@ module.exports = function(app) {
             phone: req.body.phone,
             startTime: req.body.startTime,
             endTime: req.body.endTime
-        }).then(function (dbUser) {
+        }).then(function(dbUser) {
             res.json(dbUser);
         });
     });
