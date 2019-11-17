@@ -1,0 +1,129 @@
+<nav class="navbar navbar-light blue lighten-4">
+    <span class="navbar-brand">Voluntour</span>
+</nav>
+{{!-- Volunteer Profile Page --}}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+                <div class="card-img-left d-none d-md-flex">
+                </div>
+                <div class="card-body">
+                    <form class="form-signin">
+                        <div class="row">
+                            <div class="col">
+                                {{!-- profile photo  --}}
+                                <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg"
+                                    alt="thumbnail" class="img-thumbnail z-depth-3 rounded-circle float-left"
+                                    style="width: 200px">
+                            </div>
+                            <div class="col">
+                                {{!-- Name and contact info (email & phone number) of volunteer  --}}
+                                <div class="card border-info mb-3" style="max-width: 20rem;">
+                                    <div class="card-header">John Doe</div>
+                                    <div class="card-body text-info">
+                                        <h5 class="card-title">Contact Info</h5>
+                                        <p class="card-text">email@email.com</p>
+                                        <p class="card-text">(555)555-5555</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <!--Table that shows Names of volunteers/employees and provides
+                                hours of volunteer time-->
+                                <table id="tablePreview" class="table table-hover table-borderless z-depth-2">
+                                    <!--Table head-->
+                                    <thead>
+                                        <tr>
+                                            <th>Our Volunteers</th>
+
+                                            <th>Hours</th>
+                                            <!-- Button trigger modal -->
+                                            <th><button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    data-target="#VolunteerAd">
+                                                    Add Volunteer
+                                                </button></th>
+                                        </tr>
+                                    </thead>
+                                    <!--Table head-->
+                                    <!--Table body-->
+                                    <tbody>
+
+                                        {{#each data}}
+
+                                        <tr>
+                                            <td>{{firstName}} {{lastName}}</td>
+                                            <td>{{hours}}</td>
+                                            <td><button>Update</button></td>
+                                            <td><button>Delete</button></td>
+                                        </tr>
+
+                                        {{/each}}
+
+
+                                    </tbody>
+                                    <!--Table body-->
+                                </table>
+                                <!--Table-->
+                                {{!--------------------------   MODAL CODE ------------------------------}}
+
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="VolunteerAd" tabindex="-1" role="dialog"
+                                    aria-labelledby="add volunteer" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="add">Add Volunteer</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/user/register" method="POST">
+                                                    <div class="form-group">
+                                                        <label for="firstName">First Name</label>
+                                                        <input type="text" class="form-control" id="firstName"
+                                                            aria-describedby="firstname" placeholder="First Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lastName">Last Name</label>
+                                                        <input type="text" class="form-control" id="lastName"
+                                                            aria-describedby="lastname" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email">Email</label>
+                                                        <input type="email" class="form-control"
+                                                            id="email" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="phone">Phone</label>
+                                                        <input type="phone" class="form-control"
+                                                            id="phone" placeholder="Phone">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{!--------------------------   END MODAL CODE ------------------------------}}
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

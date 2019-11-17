@@ -1,33 +1,46 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Brand nav bar -->
+<nav class="navbar navbar-light blue lighten-4">
+    <span class="navbar-brand">Voluntour</span>
+</nav>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <!-- Sign In button -->
+
+            <div class="col-6 align-items-center">
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-pink" data-toggle="modal" data-target="#exampleModal">
+  Sign In
+</button>
+            </div>
+            <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" name="username" placeholder="Username">
+                            <input type="text" name="password" placeholder="Password">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Accont button -->
+            <div class="col-6 align-items-center">
+                <a type="button" class="btn btn-cyan" href="/create">Create Account</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
