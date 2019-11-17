@@ -29,7 +29,7 @@ module.exports = function(app) {
             org: req.body.org,
             volunteers: req.body.volunteers,
             hours: req.body.hours
-        }).then(function (dbOrganization) {
+        }).then(function(dbOrganization) {
             res.json(dbOrganization);
         });
     });
