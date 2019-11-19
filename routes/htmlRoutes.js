@@ -35,6 +35,18 @@ module.exports = function(app) {
             }
         });
     });
+    ///cms route
+    app.get("/cms", function (req, res) {
+        res.render("cms", {
+            title: "Voluntour - cms"
+        });
+    });
+///logs route
+app.get("/blog", function(req, res){
+    res.render("blog", {
+        title: "Voluntour - blog"
+    });
+});
 
     // create admin profile route
     app.get("/admin/profile", function(req, res) {
