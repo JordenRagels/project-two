@@ -14,7 +14,7 @@ module.exports = function(app) {
             startTime: req.body.startTime,
             endTime: req.body.endTime
         }).then(function(dbUser) {
-            res.json(dbUser);
+            res.redirect('/login');
         });
     });
 
