@@ -1,4 +1,5 @@
 @import './var';
+//INDEX PAGE ***************************************
 body {
     margin: 0 auto;
 }
@@ -58,4 +59,32 @@ div {
 h3 {
     font-family: $caveat;
     padding-left: 20px;
+}
+
+//INDEX PAGE ***************************************
+// USER PROFILE ************************************
+div {
+    .list-group-item {
+        display: flex;
+    }
+}
+
+// CREATE ACCOUNT *********************************
+div#createAcct.container-fluid {
+    div.row {
+        div.col-lg-10.col-xl-9 {
+            div.card.card-signin {
+                div.card-body {
+                    display: flex;
+                    height: 100vh;
+                    margin: auto;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+.card-body::h5 {
+    padding: 5px;
 }
