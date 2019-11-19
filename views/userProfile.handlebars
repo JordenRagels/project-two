@@ -15,46 +15,43 @@
                             <img src="https://mdbootstrap.com/img/Others/documentation/img%20(75)-mini.jpg"
                                 alt="thumbnail" class="img-thumbnail z-depth-3 rounded-circle float-left"
                                 style="width: 200px">
-                            <form id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
-                                <input type="file" name="userPhoto" />
-                                <input type="submit" value="Upload Image" name="submit">
-                            </form>
+
                             {{!-- profile photo  --}}
-                            
+
                         </div>
                         <div class="col">
-                            {{!-- Name and contact info (email & phone number) of volunteer  --}}
+                            {{!-- Volunteer organizations here --}}
                             <div class="card border-info mb-3" style="max-width: 20rem;">
                                 <div class="card-header">
                                     {{!-- want to pull in data from users table --}}
-                                    <p>Volunteer</p>
+                                    <h5>My Info</h5>
                                 </div>
                                 <div class="card-body text-info">
-                                    <h5 class="card-title">Contact Info</h5>
-                                    <p class="card-text">email@email.com</p>
-                                    <p class="card-text">555-555-5555</p>
+                                    <h5 class="card-title">My Organizations</h5>
+
+                                    <ul>
+                                        <li class="dropdown">
+                                            <select value="">
+{{#each data}}
+<p>{{org}}</p>
+{{/each}}
+                                                <option name="" id="">Animal Shelter</option>
+                                                <option name="" id="">Soup Kitchen</option>
+                                                <option name="" id="">Library</option>
+                                                <option name="" id="">Help Tucson</option>
+
+
+                                            </select>
+                                        </li>
+                                    </ul>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="card">
-                                <div class="card-body text-align-left">
-                                    <h3>My Organizations</h3>
-                                    <ul>
-                                        <li class="dropdown">
-                                            <select value="">
-                                                {{#each data}}
-                                                <option name="" id="">{{org}}</option>
-                                                {{/each}}
-                                            </select>
-                                        </li>
-                                    </ul>
 
-                                </div>
-                                <h4>My Hours</h4>
-                            </div>
                         </div>
 
                     </div>
@@ -77,7 +74,7 @@
                         <!--Table head-->
                         <!--Table body-->
                         <tbody>
-                            {{#each data}}
+                            {{#each userData}}
 
                             <tr>
                                 <td>{{org}}</td>

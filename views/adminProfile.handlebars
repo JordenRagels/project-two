@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light blue lighten-4">
+<nav class="navbar navbar-light lighten-4">
     <span class="navbar-brand">Voluntour</span>
 </nav>
 {{!-- Volunteer Profile Page --}}
@@ -19,12 +19,27 @@
                             </div>
                             <div class="col">
                                 {{!-- Name and contact info (email & phone number) of volunteer  --}}
+                                {{!-- Name and contact info (email & phone number) of volunteer  --}}
                                 <div class="card border-info mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">John Doe</div>
+                                    <div class="card-header">
+                                        {{!-- want to pull in data from users table --}}
+                                        <p>Volunteer Name:</p>
+
+                                        {{this.firstName}} {{this.lastName}}
+                                    </div>
                                     <div class="card-body text-info">
                                         <h5 class="card-title">Contact Info</h5>
-                                        <p class="card-text">email@email.com</p>
-                                        <p class="card-text">(555)555-5555</p>
+                                        {{#each userData}}
+                                        <p>Email:</p>
+                                        <p class="card-text">{{this.email}}</p>
+                                        <p>Phone:</p>
+                                        <p class="card-text">{{this.phone}}</p>
+
+
+                                        <h5 class="card-title">Total Hours</h5>
+                                        <p>50</p>
+                                        {{/each}}
+                                        <hr>
                                     </div>
                                 </div>
                             </div>
@@ -56,16 +71,17 @@
                                     <!--Table body-->
                                     <tbody>
 
-                                        {{#each data}}
+                                        {{#each userData}}
 
                                         <tr>
                                             <td>{{firstName}} {{lastName}}</td>
-                                            <td>{{hours}}</td>
+                                            
+                                            <td>50</td>
 
-                                            <td>
+                                            {{!-- <td>
                                                 <button class="btn btn-info" name="update">View</button><button
                                                     class="btn btn-warning" name="update">Update</button>
-                                                <button class="btn btn-danger" name="delete">Delete</button></td>
+                                                <button class="btn btn-danger" name="delete">Delete</button></td> --}}
                                         </tr>
 
                                         {{/each}}
@@ -129,22 +145,3 @@
 
     </form>
 </div>
-</div>
-</div>
-</div>
-</div>
-{{!-- <script type="text/javascript">
-    $(function () {
-        $('#modalForm').on('submit', function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: "/api/add/user", //this is the submit URL
-                type: 'POST', //or POST
-                data: $('#modalForm').serialize(),
-                success: function (data) {
-                    alert('successfully submitted')
-                }
-            });
-        });
-    });
-</script> --}}
