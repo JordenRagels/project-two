@@ -1,9 +1,5 @@
 @import './var';
 //INDEX PAGE ***************************************
-body {
-    margin: 0 auto;
-}
-
 .list-group-item {
     line-height: 2.5;
 }
@@ -69,22 +65,8 @@ div {
     }
 }
 
-// CREATE ACCOUNT *********************************
-div#createAcct.container-fluid {
-    div.row {
-        div.col-lg-10.col-xl-9 {
-            div.card.card-signin {
-                div.card-body {
-                    display: flex;
-                    height: 100vh;
-                    margin: auto;
-                    justify-content: center;
-                }
-            }
-        }
+div {
+    form {
+        padding: 10px;
     }
-}
-
-.card-body::h5 {
-    padding: 5px;
 }
