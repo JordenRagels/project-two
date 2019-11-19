@@ -6,6 +6,10 @@ body {
   line-height: 2.5;
 }
 
+.dropdown {
+  list-style-type: none;
+}
+
 .navbar-brand {
   font-size: 40px;
   font-family: "Caveat", cursive;
