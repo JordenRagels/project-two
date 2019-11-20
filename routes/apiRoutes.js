@@ -34,6 +34,26 @@ module.exports = function(app) {
         });
     });
 
+    // gets all the database info and sends it to admin page
+    app.get("/admin/profile", function(req, res) {
+        db.Organization.findAll().then(function(dbOrganization) {
+            // console.log(dbOrganization[0]);
+            res.render("adminProfile", {
+                data: dbOrganization
+            });
+        });
+    });
+
+    // gets all the database info and sends it to user page
+    app.get("/user/profile", function(req, res) {
+        db.Organization.findAll().then(function(dbOrganization) {
+            // console.log(dbOrganization[0]);
+            res.render("userProfile", {
+                data: dbOrganization
+            });
+        });
+    });
+    // displays all users
     app.get("/api/users", function(req, res) {
         db.User.findAll().then(function(dbUser) {
             res.json(dbUser);
@@ -41,14 +61,18 @@ module.exports = function(app) {
         });
     });
 
+    // displays all the organizations
     app.get("/api/orgs", function(req, res) {
         db.Organization.findAll().then(function(dbOrganization) {
             res.json(dbOrganization);
         });
     });
-    app.post("/api/user/login", function(req, res) {
-        console.log(req.body);
-    });
+
+    // app.post("/api/user/login", function (req, res) {
+    //     console.log(req.body);
+    // });
+
+    // diplays all the users
     app.get("/api/users/", function(_req, res) {
         db.User.findAll({}).then(function(dbUser) {
             res.json(dbUser);
@@ -126,5 +150,3 @@ app.put("/api/posts", function (req, res) {
 });
 };
 
-// capture data from login form and put in database
-// GET route for getting all of the users
