@@ -1,5 +1,6 @@
-<nav class="navbar navbar-light blue lighten-4">
+<nav class="navbar navbar-light lighten-4">
         <span class="navbar-brand">Voluntour</span>
+          <img src="/images/Image from iOS (2).jpg" width="60" height="70" class="d-inline-block align-top" alt="">
     </nav>
      {{!-- Volunteer Profile Page  --}}
     <div class="container">
@@ -21,11 +22,11 @@
                                 </div>
                                 <div class="col">
                                       {{!-- Name and contact info (email & phone number) of volunteer  --}}
-                                    <div class="card border-info mb-3" style="max-width: 20rem;">
+                                    <div class="card" id="card1" style="max-width: 20rem;">
                                         <div class="card-header">John Doe</div>
                                         <div class="card-body text-info">
                                             <div class="text-center">
-                                                <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal"
+                                                <a href="" id="contact"class="btn" data-toggle="modal"
                                                     data-target="#modalContactForm">Contact Info</a>
                                             </div>
                                         </div>
@@ -41,8 +42,8 @@
                                         <!--Table head-->
                                         <thead>
                                             <tr>
-                                                <th>Volunteers</th>
-                                                <th>Hours</th>
+                                                <th>Volunteers:</th>
+                                                <th>Hours:</th>
                                             </tr>
                                         </thead>
                                         {{!-- Table head --}}
@@ -52,7 +53,7 @@
                                                 <td>Mark Humphrey</td>
                                                 <td>
                                                  {{!-- Button trigger modal --}}
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    <button type="button" id="totalHours" class="btn" data-toggle="modal"
                                                         data-target="#modalChart">Total Hours</button>
                                                     </td>
                                             </tr>
@@ -147,3 +148,28 @@
             </div>
         </div>
     </div>
+    <style>
+#totalHours{
+    background-color: #c48b9f;
+    font-family: "Caveat", cursive;
+    color: black;
+    margin: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: x-large
+}
+#contact{
+        background-color: #c48b9f;
+    font-family: "Caveat", cursive;
+    color: black;
+    margin: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: large
+}
+body{
+    color: black;
+    font-family: "Caveat",cursive;
+    font-size: x-large;
+}
+    </style>
