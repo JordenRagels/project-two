@@ -9,8 +9,8 @@ module.exports = function(app) {
     });
 
     //Login in page
-	app.get("/login",function(req,res) {
-        res.render("login",  {
+    app.get("/login", function(req, res) {
+        res.render("login", {
             title: "Voluntour - Login"
         });
     });

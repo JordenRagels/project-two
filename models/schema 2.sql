@@ -1,6 +1,9 @@
 DROP DATABASE IF EXISTS users_db;
 CREATE DATABASE users_db;
 
+DROP DATABASE IF EXISTS testdb;
+CREATE DATABASE testdb;
+
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;

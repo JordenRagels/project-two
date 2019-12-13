@@ -1,5 +1,13 @@
+body {
+  margin: 0 auto;
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+
+.dropdown {
+  list-style-type: none;
 }
 
 .navbar-brand {
@@ -54,41 +62,5 @@ div img {
 h3 {
   font-family: "Caveat", cursive;
   padding-left: 20px;
-}
-
-div .list-group-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-div form {
-  padding: 10px;
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #bdbdbd;
-  color: white;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-footer p {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  color: white;
 }
 /*# sourceMappingURL=style.css.map */

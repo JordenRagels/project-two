@@ -1,0 +1,17 @@
+nav {
+	display: flex;
+	direction: row;
+	align-items:center;
+	justify-content: space-between;
+	a {
+		text-decoration: none;
+		color:  unset;
+		&.logo {
+			background: url('../public/images/Image\ from\ iOS\ \(2\).jpg') center no-repeat cover;
+			height: 100%;
+			min-height: 50px;
+			min-width: 60px;
+			display: inline-flex;
+		}
+	}
+}
